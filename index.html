@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opti — B2B FoodTech × Fintech Pitch Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-emerald': '#10B981',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* ─── DESIGN TOKENS ─────────────────────────────────────── */
+    :root {
+      --bg-deep: #111625;
+      --bg-card: #1C2433;
+      --bg-card2: #162030;
+      --emerald: #10B981;
+      --emerald-d: #064E3B;
+      --emerald-l: #34D399;
+      --white: #FFFFFF;
+      --slate: #94A3B8;
+      --slate-l: #CBD5E1;
+      --red: #EF4444;
+      --amber: #F59E0B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #090d16;
+    }
+
+    /* ─── SLIDE SHELL ───────────────────────────────────────── */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-deep);
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto 48px;
+      box-shadow: 0 48px 140px rgba(0, 0, 0, 0.9);
+    }
+
+    /* ─── OPTI LOGO MARK ────────────────────────────────────── */
+    .opti-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .opti-logo-ring {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2.5px solid var(--emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(16, 185, 129, 0.08);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .opti-logo-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+    }
+
+    .opti-logo-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--white);
+    }
+
+    .opti-logo-text span {
+      color: var(--emerald);
+    }
+
+    /* ─── TOP CHROME ────────────────────────────────────────── */
+    .slide-chrome {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 52px 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .slide-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--emerald);
+      opacity: 0.85;
+    }
+
+    .slide-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: rgba(148, 163, 184, 0.35);
+    }
+
+    /* ─── TYPOGRAPHY SCALE ──────────────────────────────────── */
+    .t-hero {
+      font-size: 96px;
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -4px;
+      color: var(--white);
+    }
+
+    .t-xl {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -3px;
+      color: var(--white);
+    }
+
+    .t-lg {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2px;
+      color: var(--white);
+    }
+
+    .t-md {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      color: var(--white);
+    }
+
+    .t-sm {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      color: var(--white);
+    }
+
+    .t-body {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--slate);
+    }
+
+    .t-body-sm {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--slate);
+    }
+
+    .t-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* ─── EMERALD GRADIENT TEXT ─────────────────────────────── */
+    .g-text {
+      background: linear-gradient(125deg, #10B981 0%, #34D399 55%, #6EE7B7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .g-text-warm {
+      background: linear-gradient(125deg, #10B981 0%, #34D399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── RED DANGER TEXT ────────────────────────────────────── */
+    .r-text {
+      background: linear-gradient(125deg, #EF4444 0%, #F87171 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── GLOWS ─────────────────────────────────────────────── */
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .glow-em {
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+    }
+
+    .glow-red {
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.14) 0%, transparent 70%);
+    }
+
+    .glow-amber {
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+    }
+
+    /* ─── CARDS ─────────────────────────────────────────────── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+    }
+
+    .card-em {
+      background: rgba(6, 78, 59, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.22);
+      border-radius: 16px;
+      box-shadow: 0 0 48px rgba(16, 185, 129, 0.07), inset 0 0 40px rgba(6, 78, 59, 0.12);
+    }
+
+    .card-danger {
+      background: rgba(127, 29, 29, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-radius: 16px;
+    }
+
+    .card-warn {
+      background: rgba(120, 53, 15, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 16px;
+    }
+
+    /* ─── PILLS ─────────────────────────────────────────────── */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      background: rgba(16, 185, 129, 0.08);
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--emerald);
+      text-transform: uppercase;
+    }
+
+    .pill-red {
+      border-color: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.08);
+      color: #FCA5A5;
+    }
+
+    .pill-amber {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: rgba(245, 158, 11, 0.08);
+      color: #FCD34D;
+    }
+
+    /* ─── STAT NUMBERS ──────────────────────────────────────── */
+    .stat {
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: var(--emerald);
+      line-height: 1;
+    }
+
+    .stat-red {
+      color: #F87171;
+    }
+
+    .stat-amber {
+      color: #FCD34D;
+    }
+
+    /* ─── ACCENT LINE ───────────────────────────────────────── */
+    .accent-bar {
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--emerald), transparent);
+    }
+
+    /* ─── DIVIDER VERTICAL ──────────────────────────────────── */
+    .div-v {
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.2) 40%, rgba(16, 185, 129, 0.2) 60%, transparent);
+    }
+
+    /* ─── TIMELINE DOT ──────────────────────────────────────── */
+    .tl-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.7);
+      flex-shrink: 0;
+    }
+
+    /* ─── MASCOT ─────────────────────────────────────────────── */
+    .mascot {
+      /* Replace the src below with your actual mascot file */
+      /* e.g. src="mascot.png"  or keep the data-uri placeholder */
+      display: block;
+      object-fit: contain;
+    }
+
+    /* ─── NOISE TEXTURE ─────────────────────────────────────── */
+    .slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .slide>*:not(.glow) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .slide>.glow {
+      position: absolute;
+      z-index: 1;
+    }
+
+    /* ─── GRID BG ────────────────────────────────────────────── */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+
+    /* ─── PLACEHOLDER (for photos/screens) ──────────────────── */
+    .ph {
+      background: rgba(6, 78, 59, 0.18);
+      border: 1.5px dashed rgba(16, 185, 129, 0.4);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .ph-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(16, 185, 129, 0.6);
+      text-align: center;
+    }
+
+    /* ─── PRINT / PDF ────────────────────────────────────────── */
+    @media print {
+      body {
+        background: #111625;
+        margin: 0;
+      }
+
+      .slide {
+        margin: 0;
+        width: 100vw;
+        height: 56.25vw;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+    }
+
+    @page {
+      size: 1280px 720px landscape;
+      margin: 0;
+    }
+
+    .deck {
+      padding: 60px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SVG Filter to mathematically key out white backgrounds from images -->
+  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" width="0" height="0" version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="remove-white-bg">
+        <feColorMatrix type="matrix" values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          -3 -3 -3 8.5 0
+        " />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="deck">
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 01 — HOOK
+     Feeling: Dramatic, Late-Night, Visceral
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide" style="background: linear-gradient(135deg, #111625 0%, #161c28 50%, #1C2433 100%);">
+
+      <!-- Glows -->
+      <div class="glow glow-em" style="width:700px;height:700px;top:-280px;left:-200px;opacity:0.6;z-index:1;"></div>
+      <div class="glow glow-red" style="width:500px;height:500px;bottom:-200px;right:-100px;z-index:1;opacity:0.4;">
+      </div>
+
+      <!-- Chrome -->
+      <div class="slide-chrome">
+        <div class="opti-logo">
+          <div class="opti-logo-ring">
+            <div class="opti-logo-dot"></div>
+          </div>
+          <span class="opti-logo-text">opti<span>.</span></span>
+        </div>
+        <span class="text-xs text-slate-500 font-medium">01 / 12</span>
+      </div>
+
+      <!-- Main content -->
+      <div
+        style="flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 80px; gap:40px; position:relative; z-index:3;">
+
+        <!-- Headline -->
+        <div>
+          <h1
+            style="font-size:62px; font-weight:900; line-height:1.05; letter-spacing:-3px; color:var(--white); margin-bottom:10px;">
+            We Built the <span
+              style="text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 4px;">Wrong
+              Startup.</span><br>
+            <span class="g-text">(And it saved us).</span>
+          </h1>
+          <div class="accent-bar" style="width:64px; margin-top:20px;"></div>
+        </div>
+
+        <!-- The Visual Split -->
+        <div style="display:flex; align-items:center; gap:64px; margin-top:10px;">
+
+          <!-- Left Side: The Wrong Idea -->
+          <div
+            style="flex:1; display:flex; align-items:center; gap:24px; padding:32px; border-radius:18px; background:rgba(239,68,68,0.03); border:1px solid rgba(239,68,68,0.08); position:relative; opacity:0.35;">
+            <!-- Large Red X icon -->
+            <div
+              style="width:56px; height:56px; border-radius:12px; background:rgba(239,68,68,0.1); border:1.5px solid rgba(239,68,68,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <div>
+              <div class="t-mono"
+                style="font-size:11px; letter-spacing:2px; color:var(--red); text-transform:uppercase; margin-bottom:4px;">
+                The Mistake</div>
+              <div style="font-size:28px; font-weight:800; color:var(--white); letter-spacing:-1px;">B2B Marketplace
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: The Reality (glowing and prominent) -->
+          <div
+            style="flex:1.2; display:flex; align-items:center; gap:24px; padding:36px; border-radius:18px; background:rgba(16,185,129,0.08); border:1.5px solid rgba(16,185,129,0.28); box-shadow:0 16px 48px rgba(16,185,129,0.06); position:relative;">
+
+            <!-- Large Green Checkmark icon -->
+            <div
+              style="width:64px; height:64px; border-radius:14px; background:linear-gradient(135deg, #064E3B, #10B981); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 0 20px rgba(16,185,129,0.4);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+
+            <div>
+              <div class="t-mono"
+                style="font-size:11px; letter-spacing:2px; color:var(--emerald); text-transform:uppercase; margin-bottom:4px;">
+                The Reality</div>
+              <div style="font-size:30px; font-weight:900; color:#10B981; letter-spacing:-1px; line-height:1.2;">
+                B2B Operating System &amp; Fintech
+              </div>
+            </div>
+
+            <!-- Mascot Integration: playful overlap -->
+            <div style="position:absolute; right:-40px; top:-60px; z-index:10;">
+              <img class="mascot" src="mascot.png"
+                style="width:120px; height:120px; filter:url(#remove-white-bg) drop-shadow(0 12px 32px rgba(16,185,129,0.6)); transform:rotate(10deg) scale(1.05);"
+                alt="Opti mascot enlightened by the pivot" />
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div style="padding:0 52px 22px;display:flex;align-items:center;gap:10px;">
+        <div
+          style="width:6px;height:6px;border-radius:50%;background:var(--emerald);box-shadow:0 0 8px rgba(16,185,129,0.8);">
+        </div>
+        <span class="t-mono"
+          style="font-size:10px;letter-spacing:2px;color:rgba(148,163,184,0.35);text-transform:uppercase;">The Lean
+          Startup Pivot: From Marketplace to Infrastructure.</span>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 02 — PROBLEM (Deep)
+     Feeling: Heavy, Compounding, Suffocating
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide" style="background:var(--bg-deep);">
+
+      <div class="glow glow-red" style="width:800px;height:800px;top:-300px;right:-200px;opacity:0.7;z-index:1;"></div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">The Problem</span>
+        <span class="text-xs text-slate-500 font-medium">02 / 12</span>
+      </div>
+
+      <!-- Big Title -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">The B2B
+          Death Triangle</h2>
+        <p class="t-body" style="max-width:520px; margin-top: 8px;">Three compounding failures. Every. Single. Day.</p>
+      </div>
+
+      <!-- Grid layout -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 24px;">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-8 relative z-10">
+
+          <!-- Card 1 (Admin Hell) -->
+          <div
+            class="bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-[#10B981] hover:bg-white/10 transition-all duration-300 flex flex-col justify-center">
+            <h3 class="text-4xl font-bold text-red-400 mb-4">20+ Hours</h3>
+            <p class="text-[#CBD5E1] text-lg">Wasted every week manually re-typing WhatsApp voice notes into the RS.ge
+              tax portal.</p>
+          </div>
+
+          <!-- Card 2 (Cash Flow) -->
+          <div
+            class="bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-[#10B981] hover:bg-white/10 transition-all duration-300 flex flex-col justify-center">
+            <h3 class="text-4xl font-bold text-red-400 mb-4">30-45 Days</h3>
+            <p class="text-[#CBD5E1] text-lg">The average time suppliers wait to get paid for food they already
+              delivered.</p>
+          </div>
+
+          <!-- Card 3 (The Result) -->
+          <div
+            class="bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-[#10B981] hover:bg-white/10 transition-all duration-300 flex flex-col justify-center">
+            <h3 class="text-4xl font-bold text-red-400 mb-4">100% Risk</h3>
+            <p class="text-[#CBD5E1] text-lg">Suppliers are forced to act as zero-interest, unsecured banks for
+              restaurants.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mascot background -->
+      <img src="mascot.png" alt="Opti mascot stressed"
+        class="absolute right-0 bottom-0 opacity-20 w-96 transform -rotate-6 grayscale blur-[2px]"
+        style="filter: url(#remove-white-bg) grayscale(1) blur(2px); pointer-events: none;" />
+
+      <!-- Footer caption -->
+      <div style="padding:0 52px 22px;text-align:center; position:relative; z-index:10;">
+        <span class="t-mono"
+          style="font-size:10px;letter-spacing:2px;color:rgba(148,163,184,0.3);text-transform:uppercase;">Three
+          problems. One platform. Zero compromise.</span>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 03 — SOLUTION
+     Feeling: Breath of Fresh Air, Superpower Unlocked
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide grid-bg">
+
+      <div class="glow glow-em" style="width:900px;height:900px;bottom:-350px;right:-200px;opacity:0.8;z-index:1;">
+      </div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">The Solution</span>
+        <span class="text-xs text-slate-500 font-medium">03 / 12</span>
+      </div>
+
+      <!-- Main content container -->
+      <div
+        style="flex:1; display:flex; flex-direction:column; justify-content:center; padding:20px 52px 28px; position:relative; z-index:10;">
+
+        <!-- Header -->
+        <div>
+          <div class="accent-bar" style="width:48px;margin-bottom:20px;"></div>
+          <h2 class="t-lg" style="margin-bottom:12px;">The Ultimate<br><span class="g-text">Trojan Horse.</span></h2>
+          <p class="t-body" style="max-width:560px;">A free ordering app chefs love — that secretly digitizes every B2B
+            transaction for suppliers, the tax authority, and future fintech products.</p>
+        </div>
+
+        <!-- 2-column grid layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mt-8 items-center">
+
+          <!-- Left Column -->
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <!-- Bullet 1 -->
+            <div style="display:flex; gap:16px; align-items:flex-start;">
+              <div
+                style="width:36px; height:36px; border-radius:8px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Space Mono',monospace; font-size:12px; color:var(--emerald); font-weight:700;">
+                01
+              </div>
+              <div>
+                <h4 style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:4px;">Free 1-Click
+                  Ordering App for Restaurants</h4>
+                <p style="color:#CBD5E1; font-size:14px; line-height:1.5;">Voice-to-text ordering. Zero friction. Chefs
+                  become the distribution vector.</p>
+              </div>
+            </div>
+
+            <!-- Bullet 2 (Mascot with wand here) -->
+            <div
+              style="display:flex; gap:16px; align-items:flex-start; background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.15); border-radius:12px; padding:12px 16px;">
+              <div
+                style="width:36px; height:36px; border-radius:8px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Space Mono',monospace; font-size:12px; color:var(--emerald); font-weight:700;">
+                02
+              </div>
+              <div style="flex:1;">
+                <h4 style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:4px;">Automated <span
+                    class="text-[#10B981]">RS.ge</span> Sync for Suppliers</h4>
+                <p style="color:#CBD5E1; font-size:14px; line-height:1.5;">Every order auto-generates a compliant RS.ge
+                  invoice. No more manual entry. No more fines.</p>
+              </div>
+              <img class="mascot" src="mascot.png"
+                style="width:56px; height:56px; transform:rotate(15deg) scale(1.05); filter:url(#remove-white-bg) drop-shadow(0 0 16px rgba(16,185,129,0.7)); flex-shrink:0;"
+                alt="Opti mascot with wand" />
+            </div>
+
+            <!-- Bullet 3 -->
+            <div style="display:flex; gap:16px; align-items:flex-start;">
+              <div
+                style="width:36px; height:36px; border-radius:8px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Space Mono',monospace; font-size:12px; color:var(--emerald); font-weight:700;">
+                03
+              </div>
+              <div>
+                <h4 style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:4px;"><span
+                    class="text-[#10B981]">3%</span> Instant Pay Factoring</h4>
+                <p style="color:#CBD5E1; font-size:14px; line-height:1.5;">Suppliers get paid today. Partner bank
+                  absorbs risk. We take 3% on verified invoices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (Overlapping Product Catalog + Chat Bubble UI) -->
+          <div class="relative w-full max-w-lg mx-auto mt-8 md:mt-0 pt-4 pr-4" style="transform: translateY(-20px);">
+
+            <!-- Base Layer: Global Product Catalog -->
+            <div
+              class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 w-full relative z-0 transform -rotate-1">
+
+              <!-- Header -->
+              <div class="mb-3">
+                <h4 class="text-slate-800 font-bold text-lg leading-tight">Global Product Catalog</h4>
+                <p class="text-slate-500 text-[10px]">Browse food and supplies from all verified vendors.</p>
+              </div>
+
+              <!-- Search & Filters -->
+              <div class="border border-slate-200 rounded-lg p-2 bg-slate-50 flex items-center gap-2 mb-2">
+                <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span class="text-[10px] text-slate-400">Search products, suppliers, or SKU...</span>
+              </div>
+
+              <div class="flex gap-2 mb-4">
+                <span class="px-3 py-1 bg-[#10B981] text-white text-[9px] rounded-full font-medium">All</span>
+                <span
+                  class="px-3 py-1 bg-blue-50 text-blue-500 border border-blue-100 text-[9px] rounded-full font-medium">Dairy</span>
+                <span
+                  class="px-3 py-1 bg-orange-50 text-orange-600 border border-orange-100 text-[9px] rounded-full font-medium">Dry
+                  Goods</span>
+                <span
+                  class="px-3 py-1 bg-green-50 text-green-600 border border-green-100 text-[9px] rounded-full font-medium">Produce</span>
+              </div>
+
+              <!-- Product Cards Grid -->
+              <div class="grid grid-cols-2 gap-3">
+
+                <!-- Card 1 (Tomato) -->
+                <div class="border border-slate-100 rounded-xl overflow-hidden shadow-sm flex flex-col">
+                  <div
+                    class="h-24 bg-red-400 relative p-1 flex items-center justify-center font-bold text-white text-3xl">
+                    🍅
+                    <span
+                      class="absolute top-1 left-1 bg-white text-blue-500 text-[8px] px-1.5 py-0.5 rounded shadow-sm font-medium">Produce</span>
+                  </div>
+                  <div class="p-2.5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <div class="font-bold text-slate-800 text-sm">My tomato</div>
+                      <div class="text-[9px] text-slate-500 mb-1">Provided by Opti</div>
+                    </div>
+                    <div class="flex justify-between items-end mt-2">
+                      <div>
+                        <div class="font-bold text-sm text-slate-800">$3.00</div>
+                        <div class="text-[8px] text-slate-400">per kg</div>
+                      </div>
+                      <div class="bg-[#10B981] text-white text-[10px] px-3 py-1 rounded-full font-bold shadow-sm">+ Add
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 (Flour) -->
+                <div class="border border-slate-100 rounded-xl overflow-hidden shadow-sm flex flex-col">
+                  <div
+                    class="h-24 bg-yellow-100 relative p-1 flex items-center justify-center font-bold text-slate-700 text-3xl">
+                    🌾
+                    <span
+                      class="absolute top-1 left-1 bg-orange-50 text-orange-600 text-[8px] px-1.5 py-0.5 rounded shadow-sm font-medium">Dry
+                      Goods</span>
+                  </div>
+                  <div class="p-2.5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <div class="font-bold text-slate-800 text-sm">Flour</div>
+                      <div class="text-[9px] text-slate-500 mb-1">Provided by Opti</div>
+                    </div>
+                    <div class="flex justify-between items-end mt-2">
+                      <div>
+                        <div class="font-bold text-sm text-slate-800">$9.00</div>
+                        <div class="text-[8px] text-slate-400">per kg</div>
+                      </div>
+                      <div class="bg-[#10B981] text-white text-[10px] px-3 py-1 rounded-full font-bold shadow-sm">+ Add
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Top Layer: Smart Chat Bubble -->
+            <div class="absolute -bottom-8 -right-8 z-10 scale-90 sm:scale-100 origin-bottom-right drop-shadow-2xl">
+              <div
+                class="bg-[#e4f9e0] rounded-2xl rounded-br-sm p-5 w-full max-w-sm ml-auto shadow-xl relative text-slate-800 font-sans border border-[#d1ebd0]">
+
+                <!-- Header Section -->
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center gap-2">
+                    <div
+                      style="width:24px; height:24px; border-radius:50%; background:#10B981; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wide">
+                      Order Placed<br><span class="text-slate-800 font-bold text-sm">#4AE9E126</span>
+                    </div>
+                  </div>
+                  <div class="bg-[#fef3c7] text-[#92400e] px-3 py-1 rounded-full text-xs font-medium">Pending</div>
+                </div>
+
+                <!-- Total Section -->
+                <div class="flex justify-between items-center py-3 mt-3 border-t border-b border-[#d1ebd0]">
+                  <span class="text-slate-500 text-sm">Total Amount</span>
+                  <span class="font-bold text-lg text-slate-800">$12.00</span>
+                </div>
+
+                <!-- Items Section -->
+                <div>
+                  <!-- Item 1 -->
+                  <div class="flex items-center gap-3 py-3 border-b border-[#d1ebd0]/50">
+                    <div
+                      class="w-10 h-10 bg-red-400 rounded-md flex items-center justify-center font-bold text-white text-sm">
+                      🍅</div>
+                    <div class="flex-1">
+                      <div class="font-semibold text-slate-800 text-sm">My tomato</div>
+                      <div class="text-slate-500 text-xs">1 x $3.00</div>
+                    </div>
+                    <div class="font-semibold text-sm text-slate-800">$3.00</div>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="flex items-center gap-3 py-3">
+                    <div
+                      class="w-10 h-10 bg-yellow-200 rounded-md flex items-center justify-center font-bold text-slate-700 text-sm">
+                      🌾</div>
+                    <div class="flex-1">
+                      <div class="font-semibold text-slate-800 text-sm">Flour</div>
+                      <div class="text-slate-500 text-xs">1 x $9.00</div>
+                    </div>
+                    <div class="font-semibold text-sm text-slate-800">$9.00</div>
+                  </div>
+                </div>
+
+                <!-- Static Button Area -->
+                <div
+                  class="w-full bg-white text-[#10B981] font-bold py-3 rounded-xl mt-2 flex items-center justify-center gap-2 shadow-sm text-sm">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                    </path>
+                  </svg>
+                  Reorder
+                </div>
+
+                <!-- Footer -->
+                <div class="text-right text-[10px] text-slate-400 mt-3 pr-1">09:45 PM ✓✓</div>
+
+              </div>
+            </div>
+
+            <!-- Bottom-Left Layer: Supplier Wallet (Instant Pay) -->
+            <div
+              class="absolute -bottom-2 -left-6 z-30 bg-[#1C2433] rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 p-3 w-48 transform -rotate-2 flex flex-col gap-2 font-sans text-white">
+              <div class="flex items-center justify-between border-b border-white/10 pb-1.5">
+                <div class="flex items-center gap-1.5">
+                  <div class="bg-blue-500/20 rounded-full p-1"><svg class="w-3 h-3 text-blue-400" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                      </path>
+                    </svg></div><span class="text-[8px] font-bold text-slate-300 uppercase tracking-widest">Supplier
+                    Wallet</span>
+                </div>
+                <span class="text-[8px] font-bold text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">NET-30</span>
+              </div>
+              <div>
+                <div class="text-[9px] text-slate-400 mb-0.5">Unpaid Invoice #4AE9E126</div>
+                <div class="font-bold text-base text-white">$120.00</div>
+              </div>
+              <div
+                class="bg-gradient-to-r from-[#10B981] to-[#059669] rounded-lg p-2 flex items-center justify-center gap-1.5 shadow-[0_0_15px_rgba(16,185,129,0.3)] mt-1">
+                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                  </path>
+                </svg>
+                <span class="text-[10px] font-bold text-white tracking-wide">Get Paid Now (3%)</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 04 — MARKET
+     Feeling: Big, Expansive, Confident
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide" style="background:var(--bg-deep);">
+
+      <div class="glow glow-em"
+        style="width:600px;height:600px;top:-250px;left:50%;transform:translateX(-50%);opacity:0.5;z-index:1;"></div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">Market Opportunity</span>
+        <span class="text-xs text-slate-500 font-medium">04 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">Georgia
+          is our Sandbox</h2>
+        <p style="color:#CBD5E1; font-size:16px; margin-top:8px; max-width:680px;">A hyper-digitized, tax-regulated
+          market — the perfect proving ground before scaling globally.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 24px;">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-8 relative z-10">
+
+          <!-- Card 1 (Phase 1) -->
+          <div
+            class="bg-white/5 rounded-2xl border border-white/10 p-6 flex flex-col justify-between hover:border-[#10B981] transition-all duration-300 relative">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-[#10B981] tracking-widest uppercase">Phase 1 · Now (2026)</span>
+                <span class="text-2xl">🇬🇪</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Georgia Sandbox</h3>
+              <ul class="text-[#CBD5E1] text-xs space-y-2 mb-6">
+                <li>• Pilot Market: Complete RS.ge tax API integration.</li>
+                <li>• Target: 8,000+ registered F&amp;B businesses.</li>
+              </ul>
+            </div>
+            <div class="mt-auto border-t border-white/10 pt-4">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Georgia HoReCa Wholesale SAM</div>
+              <div class="text-2xl font-bold text-[#10B981]">₾840 Million</div>
+            </div>
+          </div>
+
+          <!-- Card 2 (Phase 2) -->
+          <div
+            class="bg-white/5 rounded-2xl border border-white/10 p-6 flex flex-col justify-between hover:border-[#10B981] transition-all duration-300 relative">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Phase 2 · 2027</span>
+                <span class="text-2xl">🌍</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">MENA Region</h3>
+              <ul class="text-[#CBD5E1] text-xs space-y-2 mb-6">
+                <li>• The Catalyst: Government-mandated e-invoicing laws (ZATCA, etc.).</li>
+                <li>• Advantage: Opti's tax compliance engine is jurisdiction-agnostic.</li>
+              </ul>
+            </div>
+            <div class="mt-auto border-t border-white/10 pt-4">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">MENA Wholesale SAM (Saudi/UAE/Egypt)
+              </div>
+              <div class="text-2xl font-bold text-white">$4.2 Billion</div>
+            </div>
+          </div>
+
+          <!-- Card 3 (Phase 3) -->
+          <div
+            class="bg-white/5 rounded-2xl border border-white/10 p-6 flex flex-col justify-between hover:border-[#10B981] transition-all duration-300 relative">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Phase 3 · 2028</span>
+                <span class="text-2xl">🌏</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Central Asia</h3>
+              <ul class="text-[#CBD5E1] text-xs space-y-2 mb-6">
+                <li>• Target: Kazakhstan, Uzbekistan, Azerbaijan.</li>
+                <li>• Advantage: Identical payment pain points, minimal local competition.</li>
+              </ul>
+            </div>
+            <div class="mt-auto border-t border-white/10 pt-4">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Central Asia Wholesale SAM</div>
+              <div class="text-2xl font-bold text-white">$2.8 Billion</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mascot background -->
+      <img src="mascot.png" alt="Opti mascot scaling globally"
+        class="absolute right-10 bottom-10 opacity-10 w-48 transform rotate-12"
+        style="filter: url(#remove-white-bg) grayscale(1) blur(1px); pointer-events: none;" />
+
+      <!-- Footer caption -->
+      <div style="padding:0 52px 22px; position:relative; z-index:10;">
+        <span class="t-mono"
+          style="font-size:10px;letter-spacing:2px;color:rgba(148,163,184,0.3);text-transform:uppercase;">CTC =
+          Continuous Transaction Controls — the global shift that creates our regulatory moat.</span>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 05 — BUSINESS MODEL
+     Feeling: Superpower, Three Compounding Revenue Engines
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide"
+      style="background: linear-gradient(135deg, #111625 0%, #1C2433 100%), repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);">
+
+      <!-- Glows -->
+      <div class="glow glow-em" style="width:600px;height:600px;bottom:-200px;left:-100px;opacity:0.6;z-index:1;"></div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">Business Model</span>
+        <span class="text-xs text-slate-500 font-medium">05 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">
+          3 Revenue <span style="color:#10B981; font-weight:900;">Pillars.</span>
+        </h2>
+        <p style="color:#CBD5E1; opacity:0.8; font-size:16px; margin-top:8px;">Compounding, interlinked — each one makes
+          the next more defensible.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 24px;">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-10 relative z-10">
+
+          <!-- SaaS Card (Pillar 1) -->
+          <div class="bg-[#1C2433]/80 rounded-2xl border border-white/5 p-6 flex flex-col justify-between"
+            style="height: 340px;">
+            <div>
+              <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase mb-2 block">Pillar 01</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Supplier SaaS Tiers</h3>
+              <p class="text-slate-400 text-xs mb-6">Recurring subscriptions for food distributors and wholesalers.</p>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div
+                class="flex justify-between items-center bg-[#111625]/60 border border-[#10B981]/10 rounded-xl px-4 py-2.5">
+                <span class="text-xs text-slate-400 font-medium">Starter</span>
+                <span class="text-xs font-bold text-[#10B981]">₾150 <span class="text-slate-500 font-normal">/
+                    mo</span></span>
+              </div>
+              <div
+                class="flex justify-between items-center bg-[#111625]/60 border border-[#10B981]/15 rounded-xl px-4 py-2.5">
+                <span class="text-xs text-slate-300 font-semibold">Growth</span>
+                <span class="text-xs font-bold text-[#10B981]">₾299 <span class="text-slate-500 font-normal">/
+                    mo</span></span>
+              </div>
+              <div
+                class="flex justify-between items-center bg-[#111625]/60 border border-[#10B981]/20 rounded-xl px-4 py-2.5">
+                <span class="text-xs text-white font-bold">Enterprise</span>
+                <span class="text-xs font-bold text-[#10B981]">₾499 <span class="text-slate-500 font-normal">/
+                    mo</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ERP Card (Pillar 2) -->
+          <div class="bg-[#1C2433]/80 rounded-2xl border border-white/5 p-6 flex flex-col justify-between"
+            style="height: 340px;">
+            <div>
+              <span class="text-[10px] font-bold text-amber-500 tracking-[0.2em] uppercase mb-2 block">Pillar 02</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Enterprise ERP Sync</h3>
+              <p class="text-slate-400 text-xs mb-6">Custom API bridges for hotel chains and large restaurant groups —
+                bidirectional procurement sync.</p>
+            </div>
+            <div class="border border-dashed border-amber-500/30 rounded-xl p-4 text-center bg-amber-500/5 mt-auto">
+              <div class="text-lg font-bold text-amber-500 tracking-wide">Custom Fee</div>
+              <div class="text-[10px] text-slate-400 mt-1">₾3,000–15,000 setup + monthly retainer</div>
+            </div>
+          </div>
+
+          <!-- Fintech Card (Pillar 3) -->
+          <div class="bg-[#1C2433]/80 rounded-2xl border border-[#10B981]/20 p-6 flex flex-col justify-between relative"
+            style="height: 340px;">
+            <!-- Glowing Mascot Head -->
+            <div
+              class="absolute -top-5 -right-5 w-12 h-12 rounded-full bg-[#10B981]/20 border border-[#10B981] flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.5)] z-20">
+              <img src="mascot.png" class="w-8 h-8 object-contain" style="filter: url(#remove-white-bg);"
+                alt="Opti Mascot head" />
+            </div>
+            <div>
+              <span class="text-[10px] font-bold text-[#10B981] tracking-[0.2em] uppercase mb-2 block">Pillar 03</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Fintech Factoring</h3>
+              <p class="text-slate-400 text-xs mb-6">Invoice financing powered by our verified transaction data. Zero
+                balance sheet risk.</p>
+            </div>
+            <div class="flex items-center justify-between gap-3 mt-auto">
+              <div class="flex-1 bg-[#111625]/60 border border-[#10B981]/10 rounded-xl p-3 text-center">
+                <div class="text-lg font-bold text-[#10B981]">1.5%</div>
+                <div class="text-[9px] text-slate-500 mt-0.5">Premium tier</div>
+              </div>
+              <span class="text-slate-600 text-xs">➔</span>
+              <div class="flex-1 bg-[#111625]/60 border border-[#10B981]/15 rounded-xl p-3 text-center">
+                <div class="text-lg font-bold text-[#10B981]">4%</div>
+                <div class="text-[9px] text-slate-500 mt-0.5">New suppliers</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 06 — COMPETITION
+     Feeling: Confident, Strategic, Dominant
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide"
+      style="background: linear-gradient(135deg, #111625 0%, #1C2433 100%), repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);">
+
+      <!-- Glow -->
+      <div class="glow glow-em"
+        style="width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.3;z-index:1;"></div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">Competitive Landscape</span>
+        <span class="text-xs text-slate-500 font-medium">06 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">
+          We Own the <span style="color:#10B981; font-weight:900;">Workflow.</span>
+        </h2>
+        <p style="color:#CBD5E1; opacity:0.8; font-size:16px; margin-top:8px;">No competitor sits at the intersection of
+          kitchen-native UX, RS.ge compliance, and embedded finance.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 24px;">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full mt-10 relative z-10 items-center">
+
+          <!-- Left Column: 2x2 Matrix -->
+          <div class="lg:col-span-7">
+            <div
+              class="relative w-full aspect-video border border-white/10 rounded-2xl bg-[#111625]/40 backdrop-blur-sm overflow-hidden flex items-center justify-center">
+
+              <!-- Center Crosshair Lines -->
+              <div class="absolute w-full h-[1px] bg-white/10 top-1/2 left-0"></div>
+              <div class="absolute h-full w-[1px] bg-white/10 left-1/2 top-0"></div>
+
+              <!-- Axis Labels -->
+              <span
+                class="absolute top-4 left-1/2 transform -translate-x-1/2 text-[8px] font-bold text-slate-500 uppercase">RS.GE
+                COMPLIANCE ↑</span>
+              <span
+                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-[8px] font-bold text-slate-500 uppercase">↓
+                NO COMPLIANCE</span>
+              <span
+                class="absolute left-4 top-1/2 transform -translate-y-1/2 -rotate-90 text-[8px] font-bold text-slate-500 uppercase origin-left">←
+                OPS ONLY</span>
+              <span
+                class="absolute right-4 top-1/2 transform translate-y-1/2 rotate-90 text-[8px] font-bold text-slate-500 uppercase origin-right">FULL
+                FINTECH →</span>
+
+              <!-- Plot Point 1: Top-Left (Desktop ERPs) -->
+              <div
+                class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5">
+                <div
+                  class="w-10 h-10 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-[10px] font-bold text-slate-400">
+                  ERP</div>
+                <span class="text-[8px] text-slate-500 font-bold uppercase tracking-wider">DESKTOP ERPS</span>
+              </div>
+
+              <!-- Plot Point 2: Bottom-Left (WhatsApp) -->
+              <div
+                class="absolute bottom-1/4 left-1/4 transform -translate-x-1/2 translate-y-1/2 flex flex-col items-center gap-1.5">
+                <div
+                  class="w-10 h-10 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-[10px] font-bold text-slate-400">
+                  WA</div>
+                <span class="text-[8px] text-slate-500 font-bold uppercase tracking-wider">WHATSAPP</span>
+              </div>
+
+              <!-- Plot Point 3: Bottom-Right (Global Fintech) -->
+              <div
+                class="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2 flex flex-col items-center gap-1.5">
+                <div
+                  class="w-10 h-10 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-[10px] font-bold text-slate-400">
+                  GFT</div>
+                <span class="text-[8px] text-slate-500 font-bold uppercase tracking-wider">GLOBAL FINTECH</span>
+              </div>
+
+              <!-- Plot Point 4: Top-Right (Our Sweet Spot - Opti) -->
+              <div
+                class="absolute top-1/4 right-1/4 transform translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2">
+                <div
+                  class="w-16 h-16 rounded-full border border-brand-emerald bg-brand-emerald/10 flex items-center justify-center shadow-[0_0_25px_rgba(16,185,129,0.5)]">
+                  <span class="font-display font-bold text-white text-base tracking-tight leading-none">Opti<span
+                      class="text-brand-emerald">.</span></span>
+                </div>
+                <span class="text-[8px] text-brand-emerald font-bold uppercase tracking-widest">WE ARE HERE</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Why They Can't Win -->
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <h3 class="text-xl font-bold text-white mb-6">Why They <span class="text-red-400 font-bold">Can't Win</span>
+            </h3>
+
+            <!-- Card 1 (Banks) -->
+            <div class="bg-[#1C2433]/80 rounded-2xl border border-white/5 p-4 mb-4">
+              <h4 class="text-sm font-bold text-white mb-1">🏦 Banks</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">Have capital, lack kitchen-native UI. Cannot build the
+                ordering workflow without us.</p>
+            </div>
+
+            <!-- Card 2 (Desktop ERPs) -->
+            <div class="bg-[#1C2433]/80 rounded-2xl border border-white/5 p-4 mb-4">
+              <h4 class="text-sm font-bold text-white mb-1">💻 Desktop ERPs</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">No mobility. Months of onboarding. Zero chef-level
+                adoption. RS.ge connectors brittle.</p>
+            </div>
+
+            <!-- Card 3 (Global Tech) -->
+            <div class="bg-[#1C2433]/80 rounded-2xl border border-white/5 p-4">
+              <h4 class="text-sm font-bold text-white mb-1">🌍 Global Tech</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">Fear RS.ge API complexity. No local tax-law engineers.
+                Cannot localize fast enough.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 07 — PRODUCT
+     Feeling: Precise, Technical, Powerful
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide"
+      style="background: linear-gradient(135deg, #111625 0%, #1C2433 100%), repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);">
+
+      <!-- Glow -->
+      <div class="glow glow-em" style="width:600px;height:600px;top:-200px;right:-150px;opacity:0.5;z-index:1;"></div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">Product Deep-Dive</span>
+        <span class="text-xs text-slate-500 font-medium">07 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:30px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">
+          Offline Deals.<br><span class="text-brand-emerald">Executed Online.</span>
+        </h2>
+        <p style="color:#CBD5E1; opacity:0.8; font-size:16px; margin-top:8px;">Customer-specific pricing means every
+          chef sees their agreed rates — not a catalogue.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 16px;">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 w-full mt-4 relative z-10 items-center">
+
+          <!-- Left Column: Product Feature List -->
+          <div class="lg:col-span-6">
+            <!-- Item 1 -->
+            <div
+              class="bg-white/5 border border-white/5 rounded-xl px-5 py-3 flex justify-between items-center mb-3 hover:border-brand-emerald/20 transition-all">
+              <span class="text-sm font-semibold text-white">Customer-Specific Pricing Engine</span>
+              <span
+                class="text-[8px] font-bold text-teal-400 border border-teal-500/30 bg-teal-500/5 px-2.5 py-1 rounded uppercase tracking-wider">CORE</span>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+              class="bg-white/5 border border-white/5 rounded-xl px-5 py-3 flex justify-between items-center mb-3 hover:border-brand-emerald/20 transition-all">
+              <span class="text-sm font-semibold text-white">Multi-Supplier Single Cart</span>
+              <span
+                class="text-[8px] font-bold text-teal-400 border border-teal-500/30 bg-teal-500/5 px-2.5 py-1 rounded uppercase tracking-wider">CORE</span>
+            </div>
+
+            <!-- Item 3 -->
+            <div
+              class="bg-white/5 border border-white/5 rounded-xl px-5 py-3 flex justify-between items-center mb-3 hover:border-brand-emerald/20 transition-all">
+              <span class="text-sm font-semibold text-white">Auto RS.ge Invoice Generation</span>
+              <span
+                class="text-[8px] font-bold text-emerald-400 border border-emerald-500/30 bg-emerald-500/5 px-2.5 py-1 rounded uppercase tracking-wider">COMPLIANCE</span>
+            </div>
+
+            <!-- Item 4 -->
+            <div
+              class="bg-white/5 border border-white/5 rounded-xl px-5 py-3 flex justify-between items-center mb-3 hover:border-brand-emerald/20 transition-all">
+              <span class="text-sm font-semibold text-white">Voice-to-Order (Georgian NLP)</span>
+              <span
+                class="text-[8px] font-bold text-sky-400 border border-sky-500/30 bg-sky-500/5 px-2.5 py-1 rounded uppercase tracking-wider">MOAT</span>
+            </div>
+
+            <!-- Item 5 -->
+            <div
+              class="bg-white/5 border border-white/5 rounded-xl px-5 py-3 flex justify-between items-center mb-3 hover:border-brand-emerald/20 transition-all">
+              <span class="text-sm font-semibold text-white">Instant Pay Factoring Toggle</span>
+              <span
+                class="text-[8px] font-bold text-emerald-400 border border-emerald-500/30 bg-emerald-500/5 px-2.5 py-1 rounded uppercase tracking-wider">FINTECH</span>
+            </div>
+          </div>
+
+          <!-- Right Column: App Screen Mockup -->
+          <div class="lg:col-span-6">
+            <div
+              class="bg-[#1C2433] rounded-2xl border border-white/10 p-4 shadow-2xl relative flex flex-col gap-3 text-white">
+
+              <!-- Supplier Portal Header -->
+              <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-display font-bold text-white text-sm">Opti Portal <span
+                      class="text-slate-500 font-normal">| Suppliers</span></span>
+                </div>
+                <span
+                  class="text-[8px] bg-brand-emerald/10 text-[#10B981] border border-brand-emerald/20 px-2 py-0.5 rounded font-mono font-bold flex items-center gap-1">🟢
+                  RS.GE SYNC ACTIVE</span>
+              </div>
+
+              <!-- Feature 3 & 4: Voice-to-Order Georgian NLP Box -->
+              <div class="bg-[#111625]/60 border border-white/5 rounded-xl p-2.5 flex flex-col gap-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] text-slate-400 uppercase tracking-widest font-bold">Georgian NLP Order
+                    Auto-Drafted</span>
+                  <span class="text-[8px] text-sky-400 font-mono">Rooms Hotel</span>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <svg class="w-3.5 h-3.5 text-sky-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                    </path>
+                  </svg>
+                  <div class="text-[10px] text-slate-300 font-mono italic">"ათი კილო პომიდორი შემოგვიგზავნეთ..."</div>
+                </div>
+              </div>
+
+              <!-- Feature 1 & 2: Active Invoice with Customer-Specific Pricing -->
+              <div class="bg-[#111625] rounded-xl border border-white/5 p-3 flex flex-col gap-2">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <div class="text-[9px] text-slate-400">Invoice № EL-084930281</div>
+                    <div class="text-xs font-bold text-white mt-0.5">Rooms Hotel • Tbilisi</div>
+                  </div>
+                  <span
+                    class="text-[9px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded font-bold font-mono">NET-30</span>
+                </div>
+
+                <!-- Invoice Line Items showing Customer Specific Pricing -->
+                <div class="border-t border-b border-white/5 py-1.5 flex flex-col gap-1">
+                  <!-- Tomato -->
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="text-slate-400 w-1/3 text-left">Tomato (Produce)</span>
+                    <span class="text-slate-400 text-center w-1/3">10 kg x <span
+                        class="text-[#10B981] font-bold">₾3.00</span> <span
+                        class="line-through text-[8px] text-slate-600">₾4.00</span></span>
+                    <span class="font-bold text-slate-200 text-right w-1/3">₾30.00</span>
+                  </div>
+                  <!-- Flour -->
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="text-slate-400 w-1/3 text-left">Flour (Dry Goods)</span>
+                    <span class="text-slate-400 text-center w-1/3">1 pack x <span
+                        class="text-slate-300 font-medium">₾12.00</span></span>
+                    <span class="font-bold text-slate-200 text-right w-1/3">₾12.00</span>
+                  </div>
+                  <!-- Milk -->
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="text-slate-400 w-1/3 text-left">Milk (Dairy)</span>
+                    <span class="text-slate-400 text-center w-1/3">3 l x <span
+                        class="text-slate-300 font-medium">₾5.33</span></span>
+                    <span class="font-bold text-slate-200 text-right w-1/3">₾16.00</span>
+                  </div>
+                </div>
+
+                <div class="flex justify-between items-center"><span class="text-xs text-slate-400">Total Invoice
+                    Value</span><span class="text-base font-bold text-white">₾1,200.00</span></div>
+              </div>
+
+              <!-- Feature 5: Factoring/Instant Pay Widget (The core fix) -->
+              <div
+                class="bg-brand-emerald/10 border border-brand-emerald/20 rounded-xl p-3 flex flex-col gap-1.5 relative overflow-hidden">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-brand-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span class="text-[9px] font-bold text-slate-300 uppercase tracking-widest">Opti Capital
+                      (Factoring)</span>
+                  </div>
+                  <span
+                    class="text-[8px] font-bold text-[#10B981] bg-[#10B981]/10 px-2 py-0.5 rounded">PRE-APPROVED</span>
+                </div>
+
+                <div class="flex justify-between items-center my-0.5">
+                  <div>
+                    <div class="text-[9px] text-slate-400">Get this money instantly (3% Fee)</div>
+                    <div class="text-base font-bold text-white">₾1,164.00 <span
+                        class="text-[9px] text-slate-500 font-normal">credited today</span></div>
+                  </div>
+
+                  <!-- Static Toggle Button representing 3% Instant Pay -->
+                  <div
+                    class="bg-gradient-to-r from-[#10B981] to-[#059669] text-white text-[10px] font-bold px-3.5 py-2 rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.35)] flex items-center gap-1">
+                    ⚡ Get Paid Now
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 08 — GO-TO-MARKET
+     Feeling: Clever, Viral, Zero-Cost Flywheel
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide"
+      style="background: linear-gradient(135deg, #111625 0%, #1C2433 100%), repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);">
+
+      <!-- Glow -->
+      <div class="glow glow-em" style="width:500px;height:500px;bottom:-200px;right:-80px;opacity:0.5;z-index:1;"></div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">Go-To-Market</span>
+        <span class="text-xs text-slate-500 font-medium">08 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">
+          Zero <span class="text-brand-emerald">CAC.</span>
+        </h2>
+        <p style="color:#CBD5E1; opacity:0.8; font-size:16px; margin-top:8px;">Two acquisition engines that feed each
+          other — neither requires paid media.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 32px;">
+        <div class="flex flex-col md:flex-row items-stretch justify-between gap-4 mt-12 w-full relative z-10">
+
+          <!-- Left Card: Push Strategy -->
+          <div
+            class="flex-1 bg-[#1C2433]/50 rounded-2xl border border-brand-emerald/10 p-8 flex flex-col justify-between relative">
+            <div>
+              <span class="text-[10px] font-bold text-brand-emerald tracking-[0.2em] uppercase mb-4 block">Push
+                Strategy</span>
+              <h3 class="text-3xl font-display font-bold text-white mb-3">Suppliers Mandate<br>the App</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-8">A supplier onboards ➔ mandates their 20–50
+                restaurant clients to order digitally for RS.ge compliance. Zero selling at restaurant level. Spreads
+                via commercial obligation.</p>
+            </div>
+            <div class="border-t border-white/5 pt-6 mt-auto">
+              <div class="flex items-center gap-6">
+                <div>
+                  <div class="text-4xl font-bold text-[#10B981]">1</div>
+                  <div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider font-semibold">supplier onboarded
+                  </div>
+                </div>
+                <span class="text-[#10B981] text-xl">➔</span>
+                <div>
+                  <div class="text-4xl font-bold text-[#10B981]">20–50</div>
+                  <div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider font-semibold">restaurants
+                    acquired</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle Divider -->
+          <div class="hidden md:flex flex-col items-center justify-center relative px-2">
+            <div class="w-[1px] h-full bg-white/5 absolute top-0 left-1/2 -translate-x-1/2"></div>
+            <div
+              class="w-8 h-8 rounded-full bg-[#111625] border border-white/10 flex items-center justify-center text-xs text-slate-500 font-bold z-10 shadow-lg">
+              +</div>
+          </div>
+
+          <!-- Right Card: Pull Strategy -->
+          <div
+            class="flex-1 bg-[#1C2433]/50 rounded-2xl border border-white/5 p-8 flex flex-col justify-between relative">
+            <div>
+              <span class="text-[10px] font-bold text-amber-500 tracking-[0.2em] uppercase mb-4 block">Pull
+                Strategy</span>
+              <h3 class="text-3xl font-display font-bold text-white mb-3">Enterprise Hotels<br>Get API Bridges</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-8">4- and 5-star hotels buy ERP integrations — quietly
+                locking all their supplier relationships to our network.</p>
+            </div>
+            <div class="border-t border-white/5 pt-6 mt-auto">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-[9px] font-bold text-amber-500 border border-amber-500/20 bg-amber-500/5 px-3 py-1 rounded-full uppercase tracking-wider font-semibold">High
+                  ACV Deal</span>
+                <span
+                  class="text-[9px] font-bold text-amber-500 border border-amber-500/20 bg-amber-500/5 px-3 py-1 rounded-full uppercase tracking-wider font-semibold">NPS
+                  Lock-In</span>
+                <span
+                  class="text-[9px] font-bold text-amber-500 border border-amber-500/20 bg-amber-500/5 px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Network
+                  Anchor</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 09 — FINANCIALS
+     Feeling: Credible, Secure, Data-Backed, Confident
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide"
+      style="background: linear-gradient(135deg, #111625 0%, #1C2433 100%), repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);">
+
+      <!-- Glow -->
+      <div class="glow glow-em" style="width:500px;height:500px;top:-150px;left:-100px;opacity:0.5;z-index:1;"></div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">Financial Model</span>
+        <span class="text-xs text-slate-500 font-medium">09 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">
+          Data-Driven <span class="text-brand-emerald">Lending.</span>
+        </h2>
+        <p style="color:#CBD5E1; opacity:0.8; font-size:16px; margin-top:8px;">SaaS funds operations. Transaction data
+          unlocks the fintech flywheel. Zero balance sheet risk at any stage.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 32px;">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-12 relative z-10">
+
+          <!-- Card 1 -->
+          <div
+            class="bg-[#1C2433]/50 rounded-2xl border border-white/5 p-6 flex flex-col justify-between hover:border-brand-emerald/10 transition-all duration-300 relative">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-bold text-teal-400 tracking-[0.2em] uppercase">Phase 01</span>
+                <span class="text-xs text-slate-400 font-semibold font-mono">Months 1–3</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Foundation</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-6">Beta with 15 suppliers. RS.ge waybill automation
+                live. Proprietary transaction data layer begins building.</p>
+            </div>
+            <div class="border-t border-white/5 pt-4 mt-auto">
+              <div class="text-[9px] text-slate-500 uppercase tracking-wider font-semibold">MRR Target</div>
+              <div class="text-2xl font-bold text-[#10B981]">₾5,000</div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-[#1C2433]/50 rounded-2xl border border-white/5 p-6 flex flex-col justify-between hover:border-brand-emerald/10 transition-all duration-300 relative">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-bold text-amber-500 tracking-[0.2em] uppercase">Phase 02</span>
+                <span class="text-xs text-slate-400 font-semibold font-mono">Months 3–6</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">SaaS Revenue</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-6">50+ active suppliers on paid tiers. First 3
+                enterprise hotel ERP integrations live. Credit scoring algorithms active.</p>
+            </div>
+            <div class="border-t border-white/5 pt-4 mt-auto">
+              <div class="text-[9px] text-slate-500 uppercase tracking-wider font-semibold">MRR Target</div>
+              <div class="text-2xl font-bold text-white">₾25,000</div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-[#1C2433]/50 rounded-2xl border border-brand-emerald/20 p-6 flex flex-col justify-between relative shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-bold text-[#10B981] tracking-[0.2em] uppercase">Phase 03</span>
+                <span class="text-xs text-brand-emerald font-semibold font-mono">Month 6+</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Activate Fintech</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-6">Partner bank API integrations live (TBC/BOG). 3%
+                Invoice Factoring activated on transaction flows. Massive data moat.</p>
+            </div>
+            <div class="border-t border-white/5 pt-4 mt-auto flex items-center justify-between gap-4">
+              <div>
+                <div class="text-[9px] text-slate-500 uppercase tracking-wider font-semibold">MRR Target</div>
+                <div class="text-2xl font-bold text-[#10B981]">₾120,000+</div>
+              </div>
+              <div class="text-right">
+                <div class="text-[9px] text-slate-500 uppercase tracking-wider font-semibold">Balance Sheet Risk</div>
+                <div class="text-2xl font-bold text-white">0%</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 10 — TEAM
+     Feeling: Credible, Human, Trustworthy, Founder-Market Fit
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide"
+      style="background: linear-gradient(135deg, #111625 0%, #1C2433 100%), repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);">
+
+      <!-- Glow -->
+      <div class="glow glow-em" style="width:500px;height:500px;bottom:-200px;right:-100px;opacity:0.4;z-index:1;">
+      </div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">The Team</span>
+        <span class="text-xs text-slate-500 font-medium">10 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">
+          Tech × Finance <span class="text-brand-emerald">DNA.</span>
+        </h2>
+        <p style="color:#CBD5E1; opacity:0.8; font-size:16px; margin-top:8px;">Perfect founder-market fit — operators
+          who've lived the problem they're solving.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 32px;">
+        <div class="grid grid-cols-1 lg:grid-cols-11 gap-4 w-full mt-10 relative z-10 items-center">
+
+          <!-- Left Column: Co-CEO & Tech Lead -->
+          <div class="lg:col-span-5 text-center">
+            <!-- Profile Image -->
+            <div
+              class="w-36 h-36 rounded-full overflow-hidden border-2 border-brand-emerald bg-brand-emerald/5 shadow-[0_0_20px_rgba(16,185,129,0.3)] mx-auto mb-4 relative z-10">
+              <img src="co-ceo-tech.png" alt="Co-CEO & Tech Lead" class="w-full h-full object-cover">
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-1">Co-Founder & Co-CEO</h3>
+            <span class="text-[9px] font-bold text-teal-400 tracking-[0.2em] uppercase mb-3 block">Tech DNA</span>
+            <p class="text-slate-400 text-xs leading-relaxed max-w-sm mx-auto mb-6">Bachelor of Information
+              Technologies. Technical architect leading our full-stack engineering, local operations, and seamless RS.ge
+              API integrations.</p>
+
+            <div class="flex flex-wrap justify-center gap-2">
+              <span
+                class="text-[9px] font-bold text-teal-400 border border-teal-500/20 bg-teal-500/5 px-2.5 py-1 rounded-full uppercase tracking-wider">Web
+                Developer</span>
+              <span
+                class="text-[9px] font-bold text-teal-400 border border-teal-500/20 bg-teal-500/5 px-2.5 py-1 rounded-full uppercase tracking-wider">UI/UX
+                Designer</span>
+              <span
+                class="text-[9px] font-bold text-teal-400 border border-teal-500/20 bg-teal-500/5 px-2.5 py-1 rounded-full uppercase tracking-wider">Operations
+                Manager</span>
+            </div>
+          </div>
+
+          <!-- Middle Divider -->
+          <div class="lg:col-span-1 flex justify-center">
+            <div class="hidden lg:block w-[1px] h-48 bg-white/5"></div>
+          </div>
+
+          <!-- Right Column: Co-CEO & Finance Lead -->
+          <div class="lg:col-span-5 text-center">
+            <!-- Profile Image -->
+            <div
+              class="w-36 h-36 rounded-full overflow-hidden border-2 border-brand-emerald bg-brand-emerald/5 shadow-[0_0_20px_rgba(16,185,129,0.3)] mx-auto mb-4 relative z-10">
+              <img src="co-ceo-finance.png" alt="Co-CEO & Finance Lead" class="w-full h-full object-cover">
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-1">Co-Founder & Co-CEO</h3>
+            <span class="text-[9px] font-bold text-brand-emerald tracking-[0.2em] uppercase mb-3 block">Finance
+              DNA</span>
+            <p class="text-slate-400 text-xs leading-relaxed max-w-sm mx-auto mb-6">Professional trader, investor, and
+              financial analyst. Structuring our algorithmic credit underwriting, working capital risk, and commercial
+              bank APIs.</p>
+
+            <div class="flex flex-wrap justify-center gap-2">
+              <span
+                class="text-[9px] font-bold text-brand-emerald border border-brand-emerald/20 bg-brand-emerald/5 px-2.5 py-1 rounded-full uppercase tracking-wider">Financial
+                Analyst</span>
+              <span
+                class="text-[9px] font-bold text-brand-emerald border border-brand-emerald/20 bg-brand-emerald/5 px-2.5 py-1 rounded-full uppercase tracking-wider">Investor</span>
+              <span
+                class="text-[9px] font-bold text-brand-emerald border border-brand-emerald/20 bg-brand-emerald/5 px-2.5 py-1 rounded-full uppercase tracking-wider">Trader</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 11 — ROADMAP
+     Feeling: Momentum, Milestones, Unstoppable
+═══════════════════════════════════════════════════════════ -->
+    <section class="slide"
+      style="background: linear-gradient(135deg, #111625 0%, #1C2433 100%), repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);">
+
+      <!-- Glow -->
+      <div class="glow glow-em" style="width:500px;height:500px;top:-150px;right:-80px;opacity:0.45;z-index:1;"></div>
+
+      <div class="slide-chrome">
+        <span class="text-[10px] font-bold text-teal-400 tracking-[0.2em] uppercase">The Roadmap</span>
+        <span class="text-xs text-slate-500 font-medium">11 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">
+          The Next <span class="text-brand-emerald">180 Days.</span>
+        </h2>
+        <p style="color:#CBD5E1; opacity:0.8; font-size:16px; margin-top:8px;">Three milestones. Concrete. Measurable.
+          Bankable.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 32px;">
+        <div class="relative w-full mt-20 flex flex-col justify-center items-center">
+
+          <!-- The Connecting Horizontal Line -->
+          <div class="absolute w-[66%] h-[2px] bg-brand-emerald/30 top-7 left-[17%] z-0 hidden md:block"></div>
+
+          <!-- The Nodes Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full relative z-10 text-center">
+
+            <!-- Node 1: Days 1-30 -->
+            <div>
+              <div
+                class="w-14 h-14 rounded-full bg-brand-emerald text-white flex items-center justify-center shadow-[0_0_25px_rgba(16,185,129,0.5)] mx-auto mb-6 relative z-10">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div class="text-center">
+                <span class="text-[10px] font-bold text-brand-emerald tracking-[0.2em] uppercase block mb-2">Days
+                  1–30</span>
+                <h3 class="text-xl font-bold text-white mb-3">Beta Launch</h3>
+                <p class="text-slate-400 text-xs leading-relaxed max-w-[280px] mx-auto">Core ordering + RS.ge
+                  automation.</p>
+              </div>
+            </div>
+
+            <!-- Node 2: Days 31-120 -->
+            <div>
+              <div
+                class="w-14 h-14 rounded-full bg-brand-emerald text-white flex items-center justify-center shadow-[0_0_25px_rgba(16,185,129,0.5)] mx-auto mb-6 relative z-10">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                  </path>
+                </svg>
+              </div>
+              <div class="text-center">
+                <span class="text-[10px] font-bold text-brand-emerald tracking-[0.2em] uppercase block mb-2">Days
+                  31–120</span>
+                <h3 class="text-xl font-bold text-white mb-3">50 Restaurants</h3>
+                <p class="text-slate-400 text-xs leading-relaxed max-w-[280px] mx-auto">Scale to 10 suppliers, 50 active
+                  restaurants via push mandates. First enterprise hotel pilot initiated.</p>
+              </div>
+            </div>
+
+            <!-- Node 3: Days 121-180 -->
+            <div>
+              <div
+                class="w-14 h-14 rounded-full border border-dashed border-brand-emerald/40 bg-[#111625]/60 text-brand-emerald/80 flex items-center justify-center mx-auto mb-6 relative z-10">
+                <svg class="w-6 h-6 text-brand-emerald/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                  </path>
+                </svg>
+              </div>
+              <div class="text-center">
+                <span class="text-[10px] font-bold text-brand-emerald/60 tracking-[0.2em] uppercase block mb-2">Days
+                  121–180</span>
+                <h3 class="text-xl font-bold text-slate-300 mb-3">Bank API Sandbox</h3>
+                <p class="text-slate-500 text-xs leading-relaxed max-w-[280px] mx-auto">TBC/BOG sandbox integration.
+                  Factoring pilot: 5 suppliers. Credit scoring model v1.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE 12 — THE CUNICORN ASK / CALL TO ACTION
+     Feeling: Inspiring, Solid, Partner-Aligned
+ ═══════════════════════════════════════════════════════════ -->
+    <section class="slide"
+      style="background: linear-gradient(135deg, #111625 0%, #1C2433 100%), repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);">
+
+      <!-- Glow -->
+      <div class="glow glow-em" style="width:800px;height:800px;top:-300px;left:-200px;opacity:0.45;z-index:1;"></div>
+      <div class="glow glow-em" style="width:600px;height:600px;bottom:-200px;right:-100px;opacity:0.35;z-index:1;">
+      </div>
+
+      <div class="slide-chrome">
+        <div class="opti-logo">
+          <div class="opti-logo-ring">
+            <div class="opti-logo-dot"></div>
+          </div>
+          <span class="opti-logo-text">opti<span>.</span></span>
+        </div>
+        <span class="text-xs text-slate-500 font-medium">12 / 12</span>
+      </div>
+
+      <!-- Header -->
+      <div style="padding:40px 52px 0; position:relative; z-index:10;">
+        <h2 style="font-size: 52px; font-weight: 900; color: #FFFFFF; letter-spacing: -2px; line-height: 1.1;">
+          Let's Build the <br> <span class="text-brand-emerald">B2B Operating System.</span>
+        </h2>
+        <p style="color:#CBD5E1; opacity:0.8; font-size:16px; margin-top:8px;">Three specific asks. One bold vision.
+          Let's make Georgia's food supply chain a model for the world.</p>
+      </div>
+
+      <!-- Main content container -->
+      <div style="flex:1; display:flex; align-items:center; padding:0 52px 24px;">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full mt-8 relative z-10 items-center">
+
+          <!-- Left Column: The 3 Asks -->
+          <div class="lg:col-span-8">
+
+            <!-- Row 1 -->
+            <div
+              class="bg-white/5 border border-white/5 rounded-xl p-4 flex justify-between items-center mb-3 hover:border-white/10 transition-all">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-8 h-8 rounded-lg bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-xs font-bold text-brand-emerald">
+                  01</div>
+                <div>
+                  <div class="font-bold text-white text-sm">The MVP Launch 🏆</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">CUnicorn Prize to fund our first 50 Beta Restaurants &
+                    live RS.ge automation.</div>
+                </div>
+              </div>
+              <div
+                class="w-10 h-6 bg-white/10 rounded flex items-center justify-center text-[7px] font-bold text-slate-400 uppercase">
+                [CU]</div>
+            </div>
+
+            <!-- Row 2 -->
+            <div
+              class="bg-white/5 border border-white/5 rounded-xl p-4 flex justify-between items-center mb-3 hover:border-white/10 transition-all">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xs font-bold text-amber-500">
+                  02</div>
+                <div>
+                  <div class="font-bold text-white text-sm">The Bank Partnership 🏦</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Direct intros to Bank Open API & Corporate Banking
+                    teams for our Phase 2 factoring layer.</div>
+                </div>
+              </div>
+              <span
+                class="text-[8px] font-bold text-amber-500 border border-amber-500/20 bg-amber-500/5 px-2.5 py-1 rounded-full uppercase tracking-wider font-semibold">PHASE
+                2</span>
+            </div>
+
+            <!-- Row 3 -->
+            <div
+              class="bg-white/5 border border-white/5 rounded-xl p-4 flex justify-between items-center mb-3 hover:border-white/10 transition-all">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-xs font-bold text-indigo-400">
+                  03</div>
+                <div>
+                  <div class="font-bold text-white text-sm">The Seed Round 🚀</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Pre-Seed syndication with Axel Angels. SAFE note, MFN
+                    clause, pro-rata rights.</div>
+                </div>
+              </div>
+              <span
+                class="text-[8px] font-bold text-indigo-400 border border-indigo-500/20 bg-indigo-500/5 px-2.5 py-1 rounded-full uppercase tracking-wider font-semibold">SAFE</span>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Scan to Connect -->
+          <div class="lg:col-span-4 relative">
+            <div
+              class="bg-[#1C2433] rounded-2xl border border-white/10 p-5 shadow-2xl flex flex-col items-center justify-center text-center max-w-[240px] mx-auto">
+              <!-- Dashed QR Box -->
+              <div
+                class="border border-dashed border-brand-emerald/30 bg-[#111625]/60 rounded-xl p-4 w-32 h-32 flex flex-col items-center justify-center gap-2 mb-4">
+                <svg class="w-12 h-12 text-brand-emerald/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h2M4 8h16"></path>
+                </svg>
+                <span class="text-[8px] text-brand-emerald/60 font-bold uppercase tracking-widest leading-none">INSERT
+                  QR<br>CODE HERE</span>
+              </div>
+              <h4 class="text-xs font-bold text-white">Scan to Connect</h4>
+              <span class="text-[9px] text-slate-500 font-mono mt-1">optistartup@gmail.com</span>
+            </div>
+
+            <!-- Inject bottom-right Mascot & Flag -->
+            <div class="absolute right-0 -bottom-8 flex items-end gap-2">
+              <!-- Mascot -->
+              <div
+                class="w-12 h-12 rounded-full bg-brand-emerald/20 border border-brand-emerald flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.5)] z-20">
+                <img src="mascot.png" class="w-8 h-8 object-contain" style="filter: url(#remove-white-bg);"
+                  alt="Opti Mascot" />
+              </div>
+              <!-- Flag -->
+              <div
+                class="bg-brand-emerald text-white text-[8px] font-bold px-2 py-1 rounded-md border border-brand-emerald/40 tracking-wider">
+                CU</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom: Opti × CUnicorn Co-brand badge -->
+      <div
+        style="padding:0 52px 18px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:3;">
+
+        <!-- Left: tagline dot -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div
+            style="width:5px;height:5px;border-radius:50%;background:#10B981;box-shadow:0 0 8px rgba(16,185,129,0.8);">
+          </div>
+          <span class="text-[8px] text-slate-500 tracking-[0.1em] uppercase">PRESENTED AT CUNICORN DEMO DAY · CAUCASUS
+            UNIVERSITY · 2026</span>
+        </div>
+
+        <!-- Right: Opti × CUnicorn badge -->
+        <div class="bg-slate-800 rounded-full px-3 py-1 flex items-center gap-1.5 border border-white/5">
+          <div class="w-2 h-2 rounded-full bg-brand-emerald"></div>
+          <span class="text-[8px] font-bold text-white">opti</span>
+          <span class="text-[8px] text-slate-500">×</span>
+          <span class="text-[8px] font-bold text-white uppercase">CUnicorn</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </div>
+</body>
+
+</html>
