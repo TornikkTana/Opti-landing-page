@@ -18,18 +18,12 @@ export default function MascotShowcase() {
         transition={{ duration: 0.6 }}
         className="flex-1 text-left flex flex-col gap-6"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-emerald/10 border border-brand-emerald/20 w-fit">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-emerald" />
-          <span className="text-[10px] font-mono font-bold text-brand-emerald uppercase tracking-wider">
-            Brand Identity
-          </span>
-        </div>
         <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight tracking-tight">
           The Soul of our <br />
           <span className="text-brand-emerald">Infrastructure.</span>
         </h2>
         <p className="text-slate-300 text-base leading-relaxed max-w-md">
-          Say hello to the Opti mascot—representing reliability, intelligence, and lightning-fast logistics. Designed to bring a friendly interface to Georgia's complex food supply chains.
+          Say hello to the Opti mascot, representing reliability, intelligence and simplicity. Designed to bring a friendly interface to complex supply chains.
         </p>
       </motion.div>
 
@@ -51,7 +45,7 @@ export default function MascotShowcase() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl border border-white/10 bg-bg-card/30 backdrop-blur-md flex items-center justify-center p-8 shadow-2xl hover:border-brand-emerald/30 hover:shadow-[0_0_50px_rgba(16,185,129,0.25)] transition-all duration-300 overflow-hidden"
+          className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl border border-white/10 bg-bg-card/30 backdrop-blur-md flex items-center justify-center p-8 shadow-2xl hover:border-brand-emerald/30 hover:shadow-[0_0_50px_rgba(124,229,186,0.25)] transition-all duration-300 overflow-hidden"
         >
           <div className="relative w-full h-full">
             <Image

@@ -28,10 +28,10 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-bg-card border border-white/10 p-5 shadow-2xl flex flex-col items-center justify-center text-center relative z-10 rounded-2xl hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] hover:border-brand-emerald/30 transition-all duration-300"
+          className="bg-bg-card border border-white/10 p-5 shadow-2xl flex flex-col items-center justify-center text-center relative z-10 rounded-2xl hover:shadow-[0_0_30px_rgba(124,229,186,0.15)] hover:border-brand-emerald/30 transition-all duration-300"
         >
           {/* QR Code Container */}
-          <div className="bg-white rounded-xl p-2 w-32 h-32 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(16,185,129,0.25)] border border-brand-emerald/20">
+          <div className="bg-white rounded-xl p-2 w-32 h-32 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(124,229,186,0.25)] border border-brand-emerald/20">
             <Image
               src="/optistartup.svg"
               alt="Opti Contact QR Code"

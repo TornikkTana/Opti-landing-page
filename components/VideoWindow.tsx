@@ -31,7 +31,7 @@ export default function VideoWindow() {
       <motion.div
         whileHover={{ scale: 1.01 }}
         onClick={toggleFullscreen}
-        className="w-full max-w-3xl bg-bg-card border border-white/10 rounded-2xl overflow-hidden shadow-2xl cursor-pointer group hover:border-brand-emerald/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.15)] transition-all duration-300"
+        className="w-full max-w-3xl bg-bg-card border border-white/10 rounded-2xl overflow-hidden shadow-2xl cursor-pointer group hover:border-brand-emerald/30 hover:shadow-[0_0_40px_rgba(124,229,186,0.15)] transition-all duration-300"
       >
         {/* OS Titlebar */}
         <div className="bg-bg-card2/80 border-b border-white/5 px-4 py-3 flex items-center justify-between">

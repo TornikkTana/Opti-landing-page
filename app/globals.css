@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-inter), sans-serif;
-  --font-mono: var(--font-space-mono), monospace;
+  --font-sans: var(--font-poppins), sans-serif;
+  --font-mono: var(--font-poppins), sans-serif;
   
-  --color-brand-emerald: #10B981;
-  --color-emerald-dark: #064E3B;
-  --color-emerald-light: #34D399;
-  --color-emerald-glow: rgba(16, 185, 129, 0.18);
+  --color-brand-emerald: #7ce5ba;
+  --color-emerald-dark: #124d34;
+  --color-emerald-light: #a3f0d1;
+  --color-emerald-glow: rgba(124, 229, 186, 0.18);
+  
+  --color-brand-fb: #7ce5ba;
+  --color-opti-start: #6ee7b7;
+  --color-opti-end: #50b589;
   
   --color-amber-500: #F59E0B;
   --color-indigo-500: #6366F1;
@@ -31,7 +35,7 @@ body {
     repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);
   background-attachment: fixed;
   color: #FFFFFF;
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-poppins), sans-serif;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
